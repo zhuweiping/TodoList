@@ -1,4 +1,4 @@
-<h1>There are waiting to do:</h1>
+<h1>待完成事务:</h1>
 <style type="text/css">
 	.inline-ele {
 		display: inline-block;
@@ -29,7 +29,7 @@
 {% endfor %}
 
 
-<h1>There are finshed to do:</h1>
+<h1>已完成事务:</h1>
 {% for finishedtodo in finishedtodos %}
 	用户：{{finishedtodo.user}}; 事务内容：{{finishedtodo.todo}}; 紧急等级：{{finishedtodo.priority}}; 发布时间{{finishedtodo.pubtime}}
 	<form action="{% url 'todo:reback' finishedtodo.id %}" method="post" style="display:inline-block;">
@@ -50,7 +50,7 @@
 {% endfor %}
 
 
-<h1>Add Todos in there:</h1>
+<h1>添加事务:</h1>
 <form action="{% url 'todo:add' %}" method="post">
 	{% csrf_token %}
 	<p class="inline-ele">事务内容:<input type="text" name="todo"></p>
